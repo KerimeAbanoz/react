@@ -1,7 +1,5 @@
-const Path = () => {
-  return (
-    <div>Path</div>
-  )
-}
+const Paths = () => {
+  return <div>Paths</div>;
+};
 
-export default Path
+export default Paths;

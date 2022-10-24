@@ -35,7 +35,11 @@ function Nav() {
               <NavLink
                 style={({ isActive }) => ({
                   color: isActive && "red",
-                })} to="/people" className="nav-link" aria-current="page">
+                })}
+                to="/people"
+                className="nav-link"
+                aria-current="page"
+              >
                 People
               </NavLink>
             </li>
@@ -44,7 +48,11 @@ function Nav() {
               <NavLink
                 style={({ isActive }) => ({
                   color: isActive && "red",
-                })} to="/paths" className="nav-link" aria-current="page">
+                })}
+                to="/paths"
+                className="nav-link"
+                aria-current="page"
+              >
                 Paths
               </NavLink>
             </li>
@@ -52,7 +60,11 @@ function Nav() {
               <NavLink
                 style={({ isActive }) => ({
                   color: isActive && "red",
-                })} to="/contact" className="nav-link" aria-current="page">
+                })}
+                to="/contact"
+                className="nav-link"
+                aria-current="page"
+              >
                 Contact
               </NavLink>
             </li>
