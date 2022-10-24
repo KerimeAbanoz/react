@@ -15,9 +15,7 @@ import { AiFillDelete } from "react-icons/ai";
 //   },
 // ];
 
-const TutorialList = (props) => {
-  console.log(props);
-
+const TutorialList = ({ tutorials }) => {
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -32,7 +30,7 @@ const TutorialList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {[1,2,3]?.map((item) => {
+          {tutorials?.map((item) => {
             const { id, title, description } = item;
             return (
               <tr key={id}>

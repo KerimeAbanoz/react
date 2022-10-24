@@ -8,23 +8,26 @@ const Home = () => {
 
   const url = "https://cw-axios-example.herokuapp.com/api/tutorials";
 
+  //? CRUD: GET-READ
   const getTutorials = async () => {
-    const { data } = await axios(url);
-    console.log(data);
-    setTutorials(data);
+    try {
+      const { data } = await axios(url);
+      console.log(data);
+      setTutorials(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // didMount
+  //? didMount
   useEffect(() => {
-
     getTutorials();
-    }, [])
-
+  }, []);
 
   return (
     <>
       <AddTutorial />
-      <TutorialList tutorials = {tutorials} />
+      <TutorialList tutorials={tutorials} />
     </>
   );
 };
