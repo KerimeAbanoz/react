@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import { ThemeProvider } from "styled-components";
 const style = {
   colors: {
-    header: "#333",
+    header: "#fff",
     body: "#fff",
     footer: "#8A1C4A",
   },
