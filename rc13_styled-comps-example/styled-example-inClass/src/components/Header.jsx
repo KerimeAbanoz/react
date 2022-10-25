@@ -3,7 +3,8 @@ import Button from "./styles/Button.styled"
 const Header = () => {
   return (
     <div>
-        <Button>Apply Courses</Button>
+        <Button color="#A62440">Apply Courses</Button>
+        <Button bg="#A62440">Talk to Advisor</Button>
     </div>
   )
 }
