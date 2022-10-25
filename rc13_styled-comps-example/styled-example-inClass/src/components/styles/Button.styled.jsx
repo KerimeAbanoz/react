@@ -5,9 +5,8 @@ const Button = styled.button`
   color: ${({ color }) => color || "white"};
   border: 1px solid #a62440;
   border-radius: 5px;
-  box-shadow:;
   padding: 1rem 2rem;
-  
+
   background-color: ${({ bg }) => (bg ? bg : "white")};
   color: ${({ color }) => (color ? color : "white")};
   border: 1px solid #a62440;
