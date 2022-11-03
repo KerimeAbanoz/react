@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import data from "../data";
+import Grid from "@mui/material/Grid";
 
 export default function MediaCard() {
   return (
