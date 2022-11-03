@@ -8,7 +8,7 @@ const Login = () => {
   //! local state
   // const [user, setUser] = useState({ email: "", password: "" });
 
-  // Consuming LoginContext
+  //! Consuming LoginContext
   const { user, setUser } = useContext(LoginContext);
 
   const handleSubmit = (e) => {
@@ -27,7 +27,7 @@ const Login = () => {
             type="email"
             placeholder="Enter your email"
             name="email"
-            value={user?.email}
+            value={user?.email || ""}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </Form.Group>
@@ -38,7 +38,7 @@ const Login = () => {
             type="password"
             placeholder="Enter your password"
             name="password"
-            value={user?.password}
+            value={user?.password || ""}
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </Form.Group>
