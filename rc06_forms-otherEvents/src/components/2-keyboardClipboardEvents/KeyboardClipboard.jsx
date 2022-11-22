@@ -17,6 +17,10 @@ const KeyboardClipboard = () => {
     e.target.value += e.clipboardData.getData("text").toLocaleUpperCase();
     e.preventDefault();
   };
+  const handleCut = (e) => {
+    e.target.style.border = "";
+    console.log("1oldu");
+  };
 
   return (
     <div className="container text-center">
@@ -48,6 +52,7 @@ const KeyboardClipboard = () => {
         id="area"
         rows="10"
         onPaste={handleAreaPaste}
+        onCut={handleCut}
       ></textarea>
     </div>
   );
