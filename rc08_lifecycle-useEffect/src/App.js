@@ -15,8 +15,8 @@ function App() {
       {/* Short Circuit */}
       {/* {show && <LifeCycleMethods />} */}
 
-      {/* {show && <UseEffectHook />} */}
-      <User />
+      {show && <UseEffectHook />}
+      {/* <User /> */}
     </div>
   );
 }
