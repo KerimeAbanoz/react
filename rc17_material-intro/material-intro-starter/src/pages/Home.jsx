@@ -1,9 +1,11 @@
 import TypoButtons from "../components/TypoButtons";
 import TextFieldComp from "../components/TextFieldComp";
 import CardGrid from "../components/CardGrid";
+import AppbarComp from "../components/AppbarComp";
 const Home = () => {
   return (
     <>
+      <AppbarComp/>
       <TypoButtons />
       <TextFieldComp />
       <CardGrid/>
