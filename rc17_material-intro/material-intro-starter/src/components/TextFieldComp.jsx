@@ -38,7 +38,7 @@ const TextFieldComp = () => {
 
           <Button
             variant="contained"
-            lr
+            
             sx={{ mt: 3, backgroundColor: "secondary.light" }}
           >
             Submit
