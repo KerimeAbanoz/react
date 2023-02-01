@@ -12,6 +12,7 @@ import { Formik, Form } from "formik";
 import { TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import * as yup from "yup";
+import { login } from "../apiCalls/authCall";
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -40,7 +41,7 @@ const Login = () => {
         justifyContent="center"
         direction="row-reverse"
         sx={{
-          height: "100vh",
+          height: "100vh", 
           p: 2,
         }}
       >
@@ -74,7 +75,7 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={loginSchema}
             onSubmit={(values, actions) => {
-              // ! Login(values)
+              login(values)
               actions.resetForm();
               actions.setSubmitting(false);
             }}
