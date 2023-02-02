@@ -12,27 +12,41 @@ import { Formik, Form } from "formik";
 import { TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import * as yup from "yup";
-import { login } from "../hooks/useAuthCall";
+import useAuthCall from "../hooks/useAuthCall";
+import { useEffect } from "react";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const loginSchema = yup.object().shape({
   email: yup
     .string()
-    .email("Please enter a valid email")
-    .required("Please enter an email"),
+    .email("Please enter valid email")
+    .required("Please  enter an email"),
   password: yup
     .string()
-    .required("Please enter a password")
-    .min(8, "Passwoord must have min 8 characters")
-    .max(16, "Passwoord must have max 16 characters")
+    .required("Please enter a password ")
+    .min(8, "Password must have min 8 chars")
+    .max(16, "Password must have max 16 chars")
     .matches(/\d+/, "Password must have a number")
     .matches(/[a-z]+/, "Password must have a lowercase")
-    .matches(/[A-Z]+/, "Password must have a uppercase")
-    .matches(/[!,?{}><%&$#£+-.]+/, "Password must have a special character"),
+    .matches(/[A-Z]+/, "Password must have an uppercase")
+    .matches(/[!,?{}><%&$#£+-.]+/, " Password must have a special char"),
 });
 
 const Login = () => {
   const navigate = useNavigate();
   const { currentUser, error, loading } = useSelector((state) => state?.auth);
+  const { login } = useAuthCall();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/stock");
+      toastSuccessNotify("Login Performed");
+    }
+  }, [currentUser]);
+
+  useEffect(() => {
+    error && toastErrorNotify("Login can not e performed");
+  }, [error]);
 
   return (
     <Container maxWidth="lg">
@@ -41,7 +55,7 @@ const Login = () => {
         justifyContent="center"
         direction="row-reverse"
         sx={{
-          height: "100vh", 
+          height: "100vh",
           p: 2,
         }}
       >
@@ -75,7 +89,8 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={loginSchema}
             onSubmit={(values, actions) => {
-              login(values)
+              login(values);
+              navigate("/stock");
               actions.resetForm();
               actions.setSubmitting(false);
             }}
@@ -102,6 +117,7 @@ const Login = () => {
                     error={touched.email && Boolean(errors.email)}
                     helperText={touched.email && errors.email}
                   />
+
                   <TextField
                     label="Password"
                     name="password"
