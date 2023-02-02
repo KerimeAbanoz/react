@@ -12,7 +12,7 @@ import { Formik, Form } from "formik";
 import { TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import * as yup from "yup";
-import { login } from "../apiCalls/authCall";
+import { login } from "../hooks/useAuthCall";
 
 const loginSchema = yup.object().shape({
   email: yup
